@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jasa Service Laptop & PC – Ahmad</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 36px;
+      margin: 0;
+    }
+    header p {
+      font-size: 18px;
+      margin: 10px 0 20px;
+    }
+    .btn-wa {
+      display: inline-block;
+      background: #25d366;
+      color: #fff;
+      padding: 14px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    section {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h2 {
+      text-align: center;
+      color: #2c5364;
+      margin-bottom: 30px;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .service {
+      background: #fff;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    .service h3 {
+      margin-top: 0;
+    }
+    .slider {
+      position: relative;
+      max-width: 800px;
+      margin: auto;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+    .slides img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      font-size: 28px;
+      padding: 8px 14px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+    .prev { left: 10px; }
+    .next { right: 10px; }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      text-align: center;
+    }
+    .feature {
+      background: #fff;
+      padding: 20px;
+      border-radius: 14px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    footer {
+      background: #222;
+      color: #fff;
+      text-align: center;
+      padding: 30px 20px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header>
+  <h1>🔧 Jasa Service Laptop & PC</h1>
+  <p>Cepat • Jujur • Bergaransi | Panggilan & Datang ke Lokasi</p>
+  <a class="btn-wa" href="https://wa.me/6283847798901" target="_blank">📲 Konsultasi via WhatsApp</a>
+</header>
+
+<!-- LAYANAN -->
+<section>
+  <h2>💻 Layanan Kami</h2>
+  <div class="services">
+    <div class="service">Install Ulang Windows & Software</div>
+    <div class="service">Laptop / PC Lemot & Error</div>
+    <div class="service">Upgrade HDD ke SSD</div>
+    <div class="service">Bersih Virus & Malware</div>
+    <div class="service">Setting Printer & WiFi</div>
+    <div class="service">Backup & Recovery Data</div>
+  </div>
+</section>
+
+<!-- GALERI SLIDER -->
+<section>
+  <h2>📸 Hasil Pekerjaan</h2>
+  <div class="slider">
+    <div class="slides">
+      <img src="images/service1.jpg" alt="Service Laptop">
+      <img src="images/service2.jpg" alt="Upgrade SSD">
+      <img src="images/service3.jpg" alt="Install Windows">
+    </div>
+    <button class="nav prev">❮</button>
+    <button class="nav next">❯</button>
+  </div>
+</section>
+
+<!-- KEUNGGULAN -->
+<section>
+  <h2>⭐ Kenapa Pilih Kami?</h2>
+  <div class="features">
+    <div class="feature">🔒 Aman & Terpercaya</div>
+    <div class="feature">⚡ Pengerjaan Cepat</div>
+    <div class="feature">💰 Harga Bersahabat</div>
+    <div class="feature">🚗 Bisa Panggilan</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="text-align:center;">
+  <h2>📲 Siap Bantu Masalah Laptop Anda</h2>
+  <a class="btn-wa" href="https://wa.me/6283847798901" target="_blank">Chat Sekarang</a>
+</section>
+
+<footer>
+  <p><strong>AHMAD.COM</strong></p>
+  <p>Service Laptop & PC • 0838-4779-8901</p>
+  <p>© 2025</p>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const slides = document.querySelector('.slides');
+    const total = slides.children.length;
+    let index = 0;
+
+    document.querySelector('.next').onclick = () => move(1);
+    document.querySelector('.prev').onclick = () => move(-1);
+
+    function move(step) {
+      index = (index + step + total) % total;
+      slides.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    setInterval(() => move(1), 4000);
+  });
+</script>
+
+</body>
+</html>
